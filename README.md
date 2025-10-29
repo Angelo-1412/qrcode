@@ -1,2 +1,2 @@
-# QR-CODE
+# qrcode
 FrontendMentor - first proj
