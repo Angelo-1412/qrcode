@@ -6,56 +6,53 @@
 }
 
 p {
-  font-size: 15px;
+  font-size: 1rem;
   font-family: "Outfit", sans-serif;
+  color: hsl(216, 15%, 48%);
 }
 
 body {
   background-color: hsl(212, 45%, 89%);
-  height: 100px;
-  padding-top: 15%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .qr-code-container {
   border: 1px solid;
-  border-radius: 30px;
+  border-radius: 18px;
   background-color: #fff;
-  padding: 25px;
-  width: 35%;
-  margin: 0 auto;
+  padding: 1.125rem; /*18px*/
+  max-width: 400px;
+  max-height: 500px;
 }
 
 .qr-code-img {
-  border-radius: 20px;
+  border-radius: 18px;
   display: flex;
   justify-content: center;
-  margin-bottom: 35px;
   overflow: hidden;
-}
-
-.qr-code {
   width: 100%;
+  max-width: 300px;
   object-fit: cover;
 }
 
 .qr-code-text {
-  margin: 0 17px;
-  margin-bottom: 55px;
+  padding: 2rem 0;
   text-align: center;
+  max-width: 290px;
 }
 
-.qr-code-header {
-  font-size: 38px;
+.qr-code-text h1 {
+  font-size: 1.65rem;
   font-weight: 700;
-  line-height: 46px;
-  padding-bottom: 18px;
+  line-height: 1.125em;
+  padding-bottom: 0.625em;
   color: hsl(218, 44%, 22%);
 }
 
-.description {
-  font-size: 26px;
-  color: hsl(216, 15%, 48%);
-}
+/* MEDIA QUERY */
 
 @media (max-width: 800px) {
   body {
