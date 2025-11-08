@@ -1,193 +1,84 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer fonts {
+  @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 }
 
-h1 {
-  font-family: "Outfit", sans-serif;
+@layer global {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: hsl(212, 45%, 89%);
+    min-height: 100vh;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 50px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
 }
 
-p {
-  font-size: 0.9375rem;
-  font-family: "Outfit", sans-serif;
-  letter-spacing: 0.2px;
-  color: hsl(216, 15%, 48%);
+@layer colors {
+  :root {
+    --c-slate900: hsl(218, 44%, 22%);
+    --c-slate500: hsl(216, 15%, 48%);
+    --c-slate300: hsl(212, 45%, 89%);
+    --c-qrcode: hsl(0, 0%, 100%);
+    --fc-title: var(--c-slate900);
+    --fc-description: var(--c-slate500);
+  }
 }
 
-body {
-  background-color: hsl(212, 45%, 89%);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.qr-code-container {
+.qrcode {
+  border: 1px solid;
   border-radius: 20px;
-  background-color: #fff;
-  padding: 1rem; /*16px*/
   max-width: 320px;
+  padding: 1rem 1rem 2.5rem;
+  background-color: var(--c-qrcode);
 }
 
-.qr-code-img {
-  border-radius: 18px;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  width: 100%;
+.qrcode__img {
+  border-radius: 10px;
+  width: 288px;
+  height: 288px;
   object-fit: cover;
+  margin-block-end: 1.5rem;
 }
 
-.qr-code-text {
-  padding: 1.5rem 1rem 2.5rem 1rem;
+.qrcode__text {
   text-align: center;
+  padding-inline: 1rem;
 }
 
-.qr-code-text h1 {
-  font-size: 1.375rem;
+.qrcode__text--title {
+  color: var(--fc-title);
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.125em;
-  padding-bottom: 1rem;
-  color: hsl(218, 44%, 22%);
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  padding-block-end: 1rem;
 }
 
-/* MEDIA QUERY */
-
-/* @media (min-width: 2000px) {
-  .qr-code-container {
-    border-radius: 18px;
-    padding: 2rem;
-    max-width: 1000px;
-    max-height: 1300px;
-  }
-
-  .qr-code-img {
-    width: 100%;
-    max-width: 900px;
-  }
-
-  .qr-code-text {
-    padding: 2rem 0;
-    max-width: 550px;
-    margin: 0 auto;
-  }
-
-  .qr-code-text h1 {
-    font-size: 2.6rem;
-    font-weight: 700;
-    line-height: 1.125em;
-    padding-bottom: 0.625em;
-    color: hsl(218, 44%, 22%);
-  }
-
-  p {
-    font-size: 2rem;
-    font-family: "Outfit", sans-serif;
-    color: hsl(216, 15%, 48%);
-  }
+.qrcode__text--description {
+  color: var(--fc-description);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
 }
-
-@media (max-width: 2000px) {
-  .qr-code-container {
-    border-radius: 18px;
-    padding: 2rem;
-    max-width: 1000px;
-    max-height: 1300px;
-  }
-
-  .qr-code-img {
-    width: 100%;
-    max-width: 900px;
-  }
-
-  .qr-code-text {
-    padding: 2rem 0;
-    max-width: 550px;
-    margin: 0 auto;
-  }
-
-  .qr-code-text h1 {
-    font-size: 2.6rem;
-    font-weight: 700;
-    line-height: 1.125em;
-    padding-bottom: 0.625em;
-    color: hsl(218, 44%, 22%);
-  }
-
-  p {
-    font-size: 2rem;
-    font-family: "Outfit", sans-serif;
-    color: hsl(216, 15%, 48%);
-  }
-}
-
-@media (max-width: 1500px) {
-  .qr-code-container {
-    border-radius: 18px;
-    padding: 2rem;
-    max-width: 500px;
-    max-height: 620px;
-  }
-
-  .qr-code-img {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .qr-code-text {
-    padding: 2.4rem 0;
-    max-width: 370px;
-    margin: 0 auto;
-  }
-
-  .qr-code-text h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.125em;
-    padding-bottom: 0.625em;
-    color: hsl(218, 44%, 22%);
-  }
-
-  p {
-    font-size: 1.4rem;
-    font-family: "Outfit", sans-serif;
-    color: hsl(216, 15%, 48%);
-  }
-}
-
-@media (max-width: 1100px) {
-  .qr-code-container {
-    border-radius: 18px;
-    padding: 1rem;
-    max-width: 400px;
-    max-height: 500px;
-  }
-
-  .qr-code-img {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .qr-code-text {
-    padding: 2rem 0;
-    max-width: 270px;
-    margin: 0 auto;
-  }
-
-  .qr-code-text h1 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 1.125em;
-    padding-bottom: 0.625em;
-    color: hsl(218, 44%, 22%);
-  }
-
-  p {
-    font-size: 1rem;
-    font-family: "Outfit", sans-serif;
-    color: hsl(216, 15%, 48%);
-  }
-} */
